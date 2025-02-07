@@ -20,5 +20,3 @@ It consists of:
 # Workout diet:
  -Admin will post and update new diet plan to all and customers can follow as per their requirements.
 
-
-![image](Screenshot%202025-02-07%20111727.png)
