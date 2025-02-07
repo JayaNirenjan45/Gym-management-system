@@ -11,7 +11,7 @@ It consists of:
  -User and admin has separate login.
 
 # User profile:
- -User could see thei information , update them and analyse their growth.
+ -User could see thei information ,update them and analyse their growth.
  -User could view their attendance.
 
 # Attendance:
