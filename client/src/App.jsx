@@ -1,12 +1,11 @@
-function App() 
-{
-  return (
-    <>
-    <center>
-     <h1>First React APP</h1>
-     </center>
-    </>
-  );  
-}
+import Homepage from "./Homepage.jsx";
 
-export default App
+const App = () => {
+    return (
+        <div>
+            <Homepage />
+        </div>
+    );
+};
+
+export default App;
