@@ -25,9 +25,10 @@ function Homepage() {
         </div>
         <div className="nav-links">
           <ul>
-            <li><a href="#">HOME</a></li>
+          <li><a href="#">SUGGESTIONS</a></li>
+            <li><a href="#">ATTENDANCE</a></li>
             <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">DIET</a></li>
           </ul>
         </div>
       </div>
