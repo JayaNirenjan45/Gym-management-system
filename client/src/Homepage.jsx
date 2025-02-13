@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./Homepage.css";
-import logo from "./assets/images.jpg";
-import img1 from "./assets/amb1.jpg";
-import img2 from "./assets/amb2.jpg";
-import img3 from "./assets/amb3.jpg";
+import img1 from "./assets/bg1.jpg";
+import img2 from "./assets/bg2.jpg";
+import img3 from "./assets/bg3.jpg";
 
 function Homepage() {
   const images = [img1, img2, img3]; // Array of images
@@ -19,20 +18,6 @@ function Homepage() {
 
   return (
     <>
-      <div className="navbar">
-        <div className="logo" onClick={redirectToHome} style={{ cursor: "pointer" }}>
-          <img src={logo} alt="Logo" />
-        </div>
-        <div className="nav-links">
-          <ul>
-          <li><a href="#">SUGGESTIONS</a></li>
-            <li><a href="#">ATTENDANCE</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">DIET</a></li>
-          </ul>
-        </div>
-      </div>
-
       <div className="content">
         <div className="image-container" onClick={handleClick}>
           <img src={images[currentImage]} alt="Click to Change" className="dynamic-image" />
