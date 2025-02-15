@@ -1,31 +1,90 @@
-// Diet.jsx - Fresh and Neat Layout for Gym Diet Plans
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Dumbbell, Salad, Flame } from 'lucide-react';
 import './Diet.css';
 
-const dietPlans = [
-  { title: 'Weight Gain Plan', details: 'High-protein meals with complex carbs and healthy fats.', calories: '3000 kcal/day' },
-  { title: 'Weight Loss Plan', details: 'Low-carb meals with lean protein and fiber-rich veggies.', calories: '1800 kcal/day' },
-  { title: 'Keto Plan', details: 'High-fat, moderate-protein, and low-carb meals.', calories: '2000 kcal/day' },
-  { title: 'Vegan Plan', details: 'Plant-based meals with legumes, grains, and fruits.', calories: '2200 kcal/day' }
-];
+const dietPlans = {
+  Bulking: {
+    icon: <Dumbbell className="icon" />,
+    description: 'High-calorie diet focused on muscle gain.',
+    meals: [
+      'Breakfast: Oats with peanut butter and banana',
+      'Lunch: Chicken breast with rice and vegetables',
+      'Snack: Protein shake with almonds',
+      'Dinner: Salmon with sweet potatoes and broccoli'
+    ]
+  },
+  Cutting: {
+    icon: <Flame className="icon" />,
+    description: 'Low-calorie diet focused on fat loss.',
+    meals: [
+      'Breakfast: Egg whites with spinach',
+      'Lunch: Grilled chicken with quinoa and salad',
+      'Snack: Greek yogurt with berries',
+      'Dinner: Tilapia with asparagus'
+    ]
+  },
+  Maintenance: {
+    icon: <Salad className="icon" />,
+    description: 'Balanced diet to maintain current physique.',
+    meals: [
+      'Breakfast: Scrambled eggs with toast and avocado',
+      'Lunch: Turkey sandwich with mixed greens',
+      'Snack: Protein bar with an apple',
+      'Dinner: Chicken stir-fry with brown rice'
+    ]
+  }
+};
 
-function Diet() {
+const Diet = () => {
+  const [selectedDiet, setSelectedDiet] = useState('Bulking');
+
+  const handleDietChange = (diet) => {
+    setSelectedDiet(diet);
+  };
+
+  const activeDiet = dietPlans[selectedDiet];
+
   return (
     <div className="diet-container">
-      <h1 className="diet-title">Gym Diet Plans</h1>
-      <div className="diet-grid">
-        {dietPlans.map((plan, index) => (
-          <div key={index} className="card">
-            <div className="card-content">
-              <h2 className="card-title">{plan.title}</h2>
-              <p className="card-details">{plan.details}</p>
-              <p className="card-calories">Calories: {plan.calories}</p>
-            </div>
-          </div>
+      <div className="button-group">
+        {Object.keys(dietPlans).map((diet) => (
+          <motion.button
+            key={diet}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => handleDietChange(diet)}
+            className={`diet-button ${selectedDiet === diet ? 'active' : ''}`}
+          >
+            {dietPlans[diet].icon}
+            {diet}
+          </motion.button>
         ))}
+      </div>
+
+      <div className="diet-card">
+        <motion.div
+          key={selectedDiet}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="diet-content"
+        >
+          <div className="diet-header">
+            {activeDiet.icon}
+            <h2 className="diet-title">{selectedDiet} Diet</h2>
+          </div>
+          <p className="diet-description">{activeDiet.description}</p>
+          <ul className="diet-meals">
+            {activeDiet.meals.map((meal, index) => (
+              <li key={index} className="diet-meal">
+                {meal}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </div>
   );
-}
+};
 
 export default Diet;

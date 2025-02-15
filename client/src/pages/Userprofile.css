@@ -1,0 +1,80 @@
+/* Gym Person Details Card CSS */
+
+.gym-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d3cce3, #e9e4f0);
+    padding: 20px;
+  }
+  
+  .gym-card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .gym-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .gym-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #6c63ff;
+    margin-bottom: 20px;
+  }
+  
+  .gym-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .gym-card h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .gym-card p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .gym-card .card-section {
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    text-align: left;
+  }
+  
+  .gym-card .card-section h4 {
+    color: #6c63ff;
+    margin-bottom: 10px;
+  }
+  
+  .gym-card .card-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .gym-card .card-section ul li {
+    margin: 5px 0;
+    color: #444;
+  }
+  
+  .gym-card .footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+  

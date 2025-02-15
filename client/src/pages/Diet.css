@@ -1,60 +1,84 @@
-/* Diet.css - Styling for Gym Diet Plans */
 .diet-container {
-    padding: 2rem;
-    background-color: #f7f9fc;
-    min-height: 100vh;
-    text-align: center;
-  }
-  
-  .diet-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .diet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-    justify-items: center;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    width: 300px;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #34495e;
-    margin-bottom: 0.5rem;
-  }
-  
-  .card-details {
-    font-size: 1.125rem;
-    color: #7f8c8d;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-  }
-  
-  .card-calories {
-    font-size: 1.125rem;
-    font-weight: bold;
-    color: #16a085;
-    margin-top: 0.5rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  padding: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.diet-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #5187df;
+  transition: background-color 0.7s;
+}
+
+.diet-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+.diet-button.active {
+  background-color: #5adb4b;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.diet-card {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.diet-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.diet-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.diet-description {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.diet-meals {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.diet-meal {
+  background-color: #d0c3df;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

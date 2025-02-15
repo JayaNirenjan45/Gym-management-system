@@ -5,9 +5,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #111;
+    background-color: #575757;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 50px;
+    border-radius: 0px;
   }
   
   .navbar-left {
@@ -38,15 +38,14 @@
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
-    font-weight: bold;
     transition: color 0.3s ease-in-out;
     position: relative;
   }
   
   /* Hover effect to change text color */
-  .navbar-right ul li a:hover {
+  /*.navbar-right ul li a:hover {
     color: #c69e48;
-  }
+  }*/
   
   .navbar-right ul li a::after {
     content: '';

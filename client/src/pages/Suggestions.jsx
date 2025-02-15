@@ -1,31 +1,56 @@
 import React, { useState } from 'react';
-import "./Suggestions.css";
-function Suggestions() {
-  const [suggestion, setSuggestion] = useState('');
+import './Suggestions.css';
 
-  const handleSubmit = () => {
-    if (suggestion.trim()) {
-      alert(`Suggestion sent: ${suggestion}`);
-      setSuggestion('');
-    } else {
-      alert('Please enter a suggestion before submitting.');
+const Suggestions = () => {
+  const [feedbackList, setFeedbackList] = useState([]);
+
+  const [newFeedback, setNewFeedback] = useState({ name: '', suggestion: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewFeedback({ ...newFeedback, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (newFeedback.name && newFeedback.suggestion) {
+      setFeedbackList([...feedbackList, newFeedback]);
+      setNewFeedback({ name: '', suggestion: '' });
     }
   };
 
   return (
-    <div className="suggestions-container">
-      <h2>Share Your Suggestions</h2>
-      <textarea
-        className="suggestion-input"
-        value={suggestion}
-        onChange={(e) => setSuggestion(e.target.value)}
-        placeholder="Enter your suggestion here..."
-      />
-      <button className="submit-btn" onClick={handleSubmit}>
-        Send Suggestion
-      </button>
+    <div className="feedback-container">
+      <h2 className="feedback-title">Customer Feedback & Suggestions</h2>
+      <form className="feedback-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={newFeedback.name}
+          onChange={handleInputChange}
+          placeholder="Your Name"
+          required
+        />
+        <textarea
+          name="suggestion"
+          value={newFeedback.suggestion}
+          onChange={handleInputChange}
+          placeholder="Your Suggestion"
+          required
+        ></textarea>
+        <button type="submit" className="submit-btn">Submit</button>
+      </form>
+
+      <div className="feedback-list">
+        {feedbackList.map((feedback, index) => (
+          <div key={index} className="feedback-card">
+            <h4 className="fname">{feedback.name}:</h4>
+            <p>{feedback.suggestion}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Suggestions;
