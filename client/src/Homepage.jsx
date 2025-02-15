@@ -1,46 +1,46 @@
-import React, { useState } from "react";
-import "./Homepage.css";
-import logo from "./assets/images.jpg";
-import img1 from "./assets/amb1.jpg";
-import img2 from "./assets/amb2.jpg";
-import img3 from "./assets/amb3.jpg";
+import React, { useState, useEffect } from 'react';
+import './Homepage.css';
+import img1 from './assets/bg1.jpg';
+import img2 from './assets/bg2.jpg';
+import img3 from './assets/bg3.jpg';
+import img4 from './assets/bg4.jpg';
+import img5 from './assets/bg5.jpg';
+import img6 from './assets/bg6.jpg';
 
-function Homepage() {
-  const images = [img1, img2, img3]; // Array of images
-  const [currentImage, setCurrentImage] = useState(0);
+const images = [img1, img2, img3, img4, img5, img6];
 
-  const handleClick = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length); // Move to next image on click
+const Homepage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  const redirectToHome = () => {
-    window.location.href = "/"; // Redirect to homepage
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   return (
-    <>
-      <div className="navbar">
-        <div className="logo" onClick={redirectToHome} style={{ cursor: "pointer" }}>
-          <img src={logo} alt="Logo" />
-        </div>
-        <div className="nav-links">
-          <ul>
-          <li><a href="#">SUGGESTIONS</a></li>
-            <li><a href="#">ATTENDANCE</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">DIET</a></li>
-          </ul>
-        </div>
+    <div className="carousel-container">
+      <div className="carousel-slide" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {images.map((image, index) => (
+          <img key={index} src={image} alt={`Slide ${index + 1}`} className="carousel-image" />
+        ))}
       </div>
-
-      <div className="content">
-        <div className="image-container" onClick={handleClick}>
-          <img src={images[currentImage]} alt="Click to Change" className="dynamic-image" />
-          <p>Image {currentImage + 1} of {images.length} — Click to change</p>
-        </div>
+      <div className="carousel-controls">
+        <button className="carousel-button" onClick={goToPrevious}>&#8592;</button>
+        <button className="carousel-button" onClick={goToNext}>&#8594;</button>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Homepage;

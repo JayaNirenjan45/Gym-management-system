@@ -1,0 +1,96 @@
+/* CSS for Customer Feedback Cards */
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  min-height: 100vh;
+}
+
+.feedback-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.feedback-form input, .feedback-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.feedback-form button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feedback-card {
+  background-color: #e4dcd6;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  text-align: left;
+  border-left: 10px solid #5310c0;
+  transition: transform 0.3s;
+  margin-bottom: auto;
+}
+
+.feedback-card:hover {
+  transform: translateY(-10px);
+  background-color: #a9d2d1;
+}
+
+.feedback-card .customer-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.feedback-card .customer-feedback {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.feedback-card .timestamp {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+}
+.fname{
+  color: #922323;
+  font-weight: 700;
+}
