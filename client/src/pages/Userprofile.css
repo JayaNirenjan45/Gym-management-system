@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background: linear-gradient(190deg, #90b5e6,#cb91ac);
   }
   
   .profile-card {
