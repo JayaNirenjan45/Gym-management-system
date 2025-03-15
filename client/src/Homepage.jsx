@@ -6,7 +6,6 @@ import img3 from './assets/bg3.jpg';
 import img4 from './assets/bg4.jpg';
 import img5 from './assets/bg5.jpg';
 import img6 from './assets/bg6.jpg';
-import { FaEnvelope, FaPhone, FaWhatsapp, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const images = [img1, img2, img3, img4, img5, img6];
 
@@ -45,18 +44,7 @@ const Homepage = () => {
 
       {/* Contact Box (Moved outside the carousel) */}
         <br/><br/><br/>
-      <div className="contact-box">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="octanefitness@gmail.com">octanefitness@gmail.com</a></p>
-        <p>Phone: +91 9080035362</p>
-        <p>WhatsApp: <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Chat Now</a></p>
-        <div className="social-links">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-        </div>
       </div>
-    </div>
   );
 };
 
