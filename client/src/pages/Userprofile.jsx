@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import profilePic from "../assets/profile.jpg"; // Adjust path if necessary
-import "./UserProfile.css";
+import "./Userprofile.css";
 
 const UserProfile = () => {
   const [editMode, setEditMode] = useState(false);
